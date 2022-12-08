@@ -25,8 +25,8 @@ public class CryptoWithRationalNumbers {
 
         String strA = String.valueOf(a);
         String strB = String.valueOf(b);
-        String resultA = strA.charAt(0) + "*x*x + " + strA.charAt(1) +  "*x" + " + " + strA.charAt(2);
-        String resultB = strB.charAt(0) + "*x*x + " + strB.charAt(1) +  "*x" + " + " + strB.charAt(2);
+        String resultA = strA.charAt(0) + " * x * x + " + strA.charAt(1) +  " * x" + " + " + strA.charAt(2);
+        String resultB = strB.charAt(0) + " * x * x + " + strB.charAt(1) +  " * x" + " + " + strB.charAt(2);
         String result = resultA + " + " + resultB;
         Argument argX = new Argument("x = " + x);
         System.out.println((int)new Expression(result.replaceAll("x", "(" + s + ")"), argX).calculate());
