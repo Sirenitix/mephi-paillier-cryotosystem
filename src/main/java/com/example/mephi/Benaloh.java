@@ -2,7 +2,6 @@ package com.example.mephi;
 
 
 import java.math.BigInteger;
-import java.security.SecureRandom;
 
 public class Benaloh {
 
@@ -99,8 +98,7 @@ public class Benaloh {
     public static BigInteger itemZStarN(BigInteger n, BigInteger phi, BigInteger R) {
         BigInteger r;
         do {
-            r = new BigInteger(n.bitLength(), new
-                SecureRandom());
+            r = BigInteger.valueOf(29);
         } while (r.compareTo(n) >= 0 || r.gcd(n).intValue()
             != 1 || r.modPow(phi.divide(R), n).intValue() == 1);
         return r;
@@ -109,8 +107,7 @@ public class Benaloh {
     public static BigInteger randomZStarN(BigInteger n) {
         BigInteger r;
         do {
-            r = new BigInteger(n.bitLength(), new
-                SecureRandom());
+            r = BigInteger.valueOf(29);
         } while (r.compareTo(n) >= 0 || r.gcd(n).intValue()
             != 1);
         return r;
@@ -157,7 +154,7 @@ public class Benaloh {
         BigInteger result_cipher_sub = b.sub(cipher2, cipher1);
         int result_sub = b.decrypt(result_cipher_sub);
         if ((message2 - message1) % b.R.intValue() == result_sub) {
-            System.out.println("subtraction feature is working correctly!");
+                System.out.println("subtraction feature is working correctly!");
         }
 
     }
